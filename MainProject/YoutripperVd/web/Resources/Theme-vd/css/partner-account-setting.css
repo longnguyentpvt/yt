@@ -1,0 +1,106 @@
+#account-header {
+    background-color: #4DBDC9;
+    position: fixed;
+    left: 0;
+    right: 0;
+    z-index: 2;
+}
+
+#account-header .ams .am a {
+    color: #FFF;
+    display: block;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    -webkit-transition: background-color 0.15s;
+    -o-transition: background-color 0.15s;
+    -moz-transition: background-color 0.15s;
+    -ms-transition: background-color 0.15s;
+    transition: background-color 0.15s;
+}
+
+#account-header .ams .am:not(.active) a:hover {
+    background-color: #41a2ad;
+}
+
+#account-header .ams .am.active a {
+    cursor: default;
+    background-color: #E94848;
+}
+
+#account-header .ams > li {
+    float: left;
+    width: 33.33%;
+}
+
+#account-body {
+    margin-top: 35px;
+    padding: 20px 0;
+}
+
+#account-body .body-l {
+    float: left;
+    width: 200px;
+}
+
+#account-body .body-r {
+    margin-left: 220px;
+}
+
+#account-common .ava {
+    position: relative;
+}
+
+#account-common .ava img {
+    width: 100%;
+}
+
+#account-common .ava .upload-btn {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    display: none;
+    text-align: center;
+    color: #fff;
+}
+
+#account-common .ava:hover .upload-btn {
+    display: block;
+}
+
+#account-common .secs > ul > li {
+    margin-top: 10px;
+}
+
+#account-common .secs > ul > li:first-of-type {
+    margin-top: 0;
+}
+
+#account-common .secs .aSec {
+    font-size: 11px;
+}
+
+#account-common .secs .aSec .sec-tt {
+    background-color: #4DBDC9;
+    color: #fff;
+    text-align: center;
+    padding: 3px 5px;
+    margin-bottom: 5px;
+}
+
+#account-common .info-ls .al .i {
+    float: left;
+}
+
+#account-common .info-ls .al .v {
+    float: right;
+}
+
+#account-common .info-ls .al .v .checkbox-ctn .yt-checkbox {
+    margin-right: 0;
+    height: 17px;
+}

@@ -1,0 +1,113 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jan 22, 2018, 4:30:51 PM
+    Author     : nickn
+*/
+
+/*MENU BAR*/
+#trippdash-menu {
+    background-color: #4DBDC9;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+}
+
+#trippdash-menu .menu > li {
+    float: left;
+    width: 25%;
+}
+
+#trippdash-menu .menu .aMenu {
+    color: #fff;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    position: relative;
+}
+
+#trippdash-menu .menu .aMenu .svg {
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
+#trippdash-menu .menu .aMenu .icon {
+    fill: #fff;
+}
+
+#trippdash-menu .menu .aMenu .name {
+    text-align: center;
+    cursor: pointer;
+}
+
+#trippdash-menu  .aMenu .name a {
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+#trippdash-menu .menu .aMenu:hover .name,
+#trippdash-menu .menu .aMenu.active .name {
+    background-color: #E94848;
+}
+
+#trippdash-menu .menu .aMenu.active .name a {
+    cursor: default;
+}
+
+#trippdash-menu .aMenu .sub-menu {
+    border: solid 2px #E94848;
+    background-color: #fff;
+    display: none;
+}
+
+#trippdash-menu .sub-menu .aSub {
+    border-bottom: solid 2px #E94848;
+}
+
+#trippdash-menu .sub-menu .aSub a {
+    display: block;
+    padding: 0 10px;
+    text-decoration: none;
+    color: #9c9b9c;
+}
+
+#trippdash-menu .sub-menu .aSub:hover a {
+    background-color: #E94848;
+    color: #fff;
+}
+
+#trippdash-menu .sub-menu > ul > li:last-of-type .aSub {
+    border-bottom: 0;
+}
+
+#trippdash-menu .aMenu.active .sub-menu,
+#trippdash-menu .aMenu.active .aSub {
+    border-color: #E94848;
+}
+
+#trippdash-menu .aMenu.active .aSub:hover a,
+#trippdash-menu .aSub.active a {
+    background-color: #E94848;
+}
+
+#trippdash-menu .aSub.active a {
+    cursor: default;
+    color: #fff;
+}
+
+#trippdash-menu .menu .aMenu:hover .sub-menu {
+    display: block;
+}
+
+#padding-menu {
+    padding-top: 30px;
+}
+
+#trippdash-body {
+    padding-top: 30px;
+}
+/*END MENU BAR*/

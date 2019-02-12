@@ -1,0 +1,123 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 10, 2018, 7:31:53 PM
+    Author     : nickn
+*/
+
+#co-stt .stts > ul > li {
+    float: left;
+    width: 25%;
+}
+
+#co-stt .stts .aS {
+    text-align: center;
+    border-bottom: solid 5px #D6D4D4;
+}
+
+#co-stt .stts .aS.d {
+    border-color:  #D7E185;
+}
+
+
+#co-stt .stts .aS.c {
+    border-color:  #E94848;
+}
+
+body {
+    background-color: #F8F7F9;
+}
+
+#vm-pm {
+    padding: 20px 0;
+}
+
+#vm-bd {
+    margin-top: 15px;
+}
+
+#vm-bd .bd-tt {
+    background-color: #4DBDC9;
+    text-align: center;
+    color: #FFF;
+    padding: 3px 0;
+    margin-bottom: 15px;
+}
+
+#vm-bd .bd-f {
+    width: 400px;
+    margin: 0 auto;
+}
+
+#vm-bd .opts > li {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    border-bottom: solid 1px #9C9B9C;
+}
+
+#vm-bd .opts > li:last-of-type {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    border-bottom: 0;
+}
+
+#vm-bd .aO .checkbox-ctn {
+    line-height: 25px;
+}
+
+#vm-bd .aO .checkbox-ctn .yt-checkbox {
+    height: 25px;
+}
+
+#vm-bd .aO .o-f {
+    margin-top: 10px;
+}
+
+#vm-bd .aO .o-f > ul > li {
+    margin-bottom: 5px;
+}
+
+#vm-bd .aO .o-f > ul > li:last-of-type {
+    margin-bottom: 0;
+}
+
+#vm-bd .aO .o-f .yt-input.ro {
+    background-color: #D6D4D4;
+    cursor: default;
+}
+
+#vm-bd .aO .e-r .sec-i {
+    float: right;
+    width: 120px;
+}
+
+#vm-bd .aO .e-r .ed-i {
+    margin-right: 130px;
+}
+
+#vm-bd .aO .e-r .ed-i > ul {
+    margin: 0 -5px;
+}
+
+#vm-bd .aO .e-r .ed-i > ul > li {
+    display: inline-block;
+    width: 50%;
+    padding: 0 5px;
+}
+
+#vm-bd .ctrls .yt-btn {
+    font-size: 16px;
+}
+
+#vm-bd .ctrls > ul {
+    margin: 0 -5px;
+}
+
+#vm-bd .ctrls > ul > li {
+    display: inline-block;
+    width: 50%;
+    padding: 0 5px;
+}

@@ -1,0 +1,356 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 9, 2018, 6:21:40 PM
+    Author     : nickn
+*/
+
+body {
+    background-color: #E3E8F0;
+}
+
+#payment-manager {
+    padding: 15px 0;
+}
+
+#payment-manager .payment-filter  ul{
+    margin: 0 -5px;
+}
+
+#payment-manager .payment-filter  ul > li{
+    float: left;
+    padding: 0 5px;
+}
+
+#payment-manager .payment-filter li.filter-year{
+    width: 100px;
+}
+
+#payment-manager .payment-filter li.bucket{
+    width: 200px;
+}
+
+#payment-manager .payment-filter li.bucket .yt-btn{
+    padding: 5px;
+}
+
+#payment-tb  {
+    margin-top: 15px;
+}
+
+#payment-tb .tbl {
+    font-size: 12px;
+    position: relative
+}
+
+#payment-tb .tbl .row:nth-of-type(odd) {
+    background-color: #F8F7F9;
+}
+
+#payment-tb .tbl .row:nth-of-type(even) {
+    background-color: #FFF;
+}
+
+#payment-tb .tbl .cols > ul > li {
+    float: left;
+    border-right: solid 1px #E3E8F0;
+}
+#payment-tb .tbl .cols > ul > li:last-of-type {
+    border-right: 0;
+}
+
+#payment-tb .tbl .row.h-row {
+    background-color: #4DBDC9;
+
+}
+
+#payment-tb .tbl .row .col-t {
+    padding: 0 5px;
+}
+
+#payment-tb .tbl .row.h-row .col-t {
+    height: 45px;
+    color: #FFF;
+    text-align: center !important
+}
+
+#payment-tb .tbl .aCol.bd-col .col-t {
+    width: 100px;
+    text-align: center;
+}
+
+#payment-tb .tbl .aCol.bo-col .col-t {
+    width: 95px;
+    text-align: center;
+}
+
+#payment-tb .tbl .aCol.pki-col .col-t {
+    width: 110px;
+    text-align: center;
+}
+
+#payment-tb .tbl .aCol.pkn-col .col-t {
+    width: 150px;
+    text-align: left;
+}
+
+#payment-tb .tbl .aCol.p-col .col-t {
+    width: 80px;
+    text-align: right
+}
+
+#payment-tb .tbl .aCol.disc-col .col-t {
+    width: 50px;
+    text-align: right;
+}
+
+#payment-tb .tbl .o-row .aCol.disc-col .col-t {
+    color: #E94848;
+}
+
+#payment-tb .tbl .aCol.pb-col .col-t {
+    width: 60px;
+    text-align: right;
+}
+
+#payment-tb .tbl .aCol.stt-col .col-t {
+    width: 80px;
+    text-align: right
+}
+
+#payment-tb .tbl .aCol.exR-col .col-t {
+    width: 40px;
+    text-align: right
+}
+
+#payment-tb .tbl .aCol.tt-col .col-t {
+    width: 70px;
+    text-align: right
+}
+
+#payment-tb .tbl .aCol.com-col .col-t {
+    width: 50px;
+    text-align: right
+}
+
+#payment-tb .tbl .aCol.com-col .col-t {
+    width: 50px;
+    text-align: right
+}
+
+#payment-tb .tbl .aCol.pable-col .col-t {
+    width: 65px;
+    text-align: right
+}
+
+#payment-tb .tbl .aCol.pkgS-col .col-t {
+    width: 80px;
+    text-align: center;
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t {
+    width: 75px;
+    text-align: center;
+}
+
+#payment-tb .row.o-row .col-t {
+    padding: 2px 5px;
+    overflow: hidden;
+    height: 40px;
+}
+
+#payment-tb .cn-col .cn-ico .off-cn {
+    display: none;
+}
+
+#payment-tb .cn-col .cn-ico.off .off-cn {
+    display: inline-block;
+}
+
+#payment-tb .cn-col .cn-ico.off .yt-cn {
+    display: none;
+}
+
+#payment-tb .no-rows {
+    text-align: center;
+    line-height: 50px;
+    background-color: #FFF;
+}
+
+#payment-tb .paging {
+    margin-top: 5px;
+}
+
+#payment-tb .paging > ul {
+    text-align: right;
+}
+
+#payment-tb .paging > ul > li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#payment-tb .paging .ctrls .btn.dat
+{
+    opacity: 0.3;
+    cursor: default;
+}
+
+#payment-tb .paging .ctrls .btn.dat:hover{
+    background-color: #D6D4D4;
+}
+
+#payment-tb .paging .page {
+    line-height: 30px;
+    font-size: 12px;
+}
+
+#payment-tb .paging .ctrls .btn {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-color: #D6D4D4;
+    cursor: pointer;
+    -webkit-transition: background-color 0.15s;
+    -o-transition: background-color 0.15s;
+    -moz-transition: background-color 0.15s;
+    -ms-transition: background-color 0.15s;
+    transition: background-color 0.15s;
+    position: relative;
+}
+
+#payment-tb .paging .ctrls .btn:hover {
+    background-color: #b5b4b4;
+}
+
+#payment-tb .paging .ctrls > ul {
+    margin: 0 -2.5px;
+}
+
+#payment-tb .paging .ctrls > ul > li {
+    float: left;
+    padding: 0 2.5px;
+}
+
+#payment-tb .paging .ctrls .btn:before {
+    content: ' ';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-style: solid;
+    border-color: #FFF;
+    border-width: 4px 4px 0 0;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 0 4px 0 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7px;
+    margin-left: -8px;
+}
+
+#payment-tb .paging .ctrls .btn.prv:before {
+    border-width: 0 0 4px 4px;
+    left: auto;
+    right: 50%;
+    margin-right: -8px;
+    border-radius: 0 0 0 4px;
+}
+
+#payment-tb .rm-d > ul > li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#payment-tb .rm-d .no {
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    background-color: #4DBDC9;
+    color: #FFF;
+    border-radius: 50%;
+}
+
+#payment-tb .rm-d .no.tt-n {
+    background-color: #F9B03C;
+}
+
+#payment-tb .rm-d .ico {
+    font-size: 18px;
+}
+
+#booking-manager .ddl-input .yt-input option:first-of-type{
+    color: #555555
+}
+
+.absence-txt{
+    color: #E94848
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t .aCtrl{
+    display: none
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t.c-pen .aCtrl.pending {
+    display: block;
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t.c-wd .aCtrl.withdraw {
+    display: block;
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t .withdraw a {
+    color: #E94848;
+    text-decoration: underline;
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t.c-paid .aCtrl.paid {
+    display: block;
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t .paid {
+    color: #4CBDC9;
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t.c-pro .aCtrl.processing {
+    display: block;
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t .processing {
+    color: #F9B03C;
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t.c-rq .aCtrl.requesting {
+    display: block;
+}
+
+#payment-tb .tbl .aCol.paymentW-col .col-t .requesting {
+    color: #E94848;
+}
+
+#payment-tb .tbl .aCol.pkgS-col .col-t.done{
+    color: #4CBDC9
+}
+
+#payment-tb .tbl .aCol.pkgS-col .col-t.done .s-w{
+    display: none;
+}
+
+#payment-tb .tbl .aCol.pkgS-col .col-t.done .s-d{
+    display: inline-block;
+}
+
+#payment-tb .tbl .aCol.pkgS-col .col-t .s-d{
+    display: none;
+}
+
+.ddl-input .yt-input option:first-of-type{
+    color: #555555
+}

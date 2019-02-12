@@ -1,0 +1,1463 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 31, 2017, 2:59:19 PM
+    Author     : nickn
+*/
+
+/* COMMON */
+.pac-container {
+    z-index: 999999;
+}
+
+#package-registration {
+    position: relative;
+}
+
+#package-registration > .header {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    background-color: #fff;
+}
+
+#package-registration > .header .status {
+    background-color: #4DBDC9;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+    color: #fff;
+}
+
+#package-registration > .header .steps {
+    position: relative;
+}
+
+#package-registration > .header .steps .btns {
+    position: absolute;
+    right: 0;
+    height: 40px;
+}
+
+#package-registration > .header .btns  ul {
+    margin: 0 -5px;
+}
+
+#package-registration > .header .btns ul > li {
+    float: left;
+    padding: 0 5px;
+}
+
+#package-registration > .header .btns a {
+    width: 150px;
+}
+
+#package-registration > .header .btns a.submit-btn {
+    background-color: #fff;
+    color: #E94848;
+    cursor: default;
+}
+
+#package-registration > .header .steps > ul {
+    margin-right: 320px;
+}
+
+#package-registration > .header .steps > ul > li {
+    float: left;
+    width: 20%;
+    height: 40px;
+}
+
+#package-registration > .header .steps > ul a {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    text-decoration: none;
+}
+
+#package-registration > .header .steps > ul > li.done a {
+    color: #D7E185;
+    border-bottom: solid 4px #D7E185;
+}
+
+#package-registration > .header .steps > ul > li a:hover {
+    color: #4DBDC9;
+    border-bottom: solid 4px #4DBDC9;
+}
+
+#package-registration > .header .steps > ul > li.active a {
+    cursor: default;
+    color: #E94848;
+    border-bottom: solid 4px #E94848;
+}
+
+#package-registration .body {
+    padding-top: 40px;
+    color: #555555;
+}
+
+#package-registration .body .section {
+    padding: 20px 0;
+}
+
+#package-registration .body .section.grey {
+    background-color: #F8F7F9;
+}
+
+#package-registration .section .left-info {
+    float: left;
+    width: 580px;
+}
+
+#package-registration .section .instructions {
+    margin-left: 640px;
+}
+
+
+#package-registration .body .question {
+    margin-bottom: 40px;
+}
+
+#package-registration .body .question.last {
+    margin-bottom: 0;
+}
+
+#package-registration .body .question > .text {
+    margin-bottom: 5px;
+    position: relative;
+}
+
+#package-registration .body .question > .text.checkbox {
+    margin-left: -25px;
+}
+
+#package-registration .body .question > .text.checkbox.error .yt-checkbox > span:before {
+    background-color: #E94848;
+}
+
+#package-registration .question.right-value .value {
+    float: right;
+    position: relative;
+    z-index: 1;
+}
+
+#package-registration .question.right-value .text {
+    line-height: 35px;
+}
+
+#package-registration .body .question.mandatory > .text:before {
+    content: ' ';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: #E94848;
+    border-radius: 50%;
+    position: absolute;
+    left: -15px;
+    top: 50%;
+    margin-top: -5px;
+} 
+
+#package-registration .body .question.done > .text:before {
+    background-color: #D7E185;
+}
+
+#package-registration .body .aInstruction {
+    margin-bottom: 25px;
+    padding: 10px;
+    background-color: #F8F7F9;
+    border: solid 2px #E94848;
+    position: relative;
+}
+
+#package-registration .body .aInstruction:last-of-type {
+    margin-bottom: 0;
+}
+
+#package-registration .body .aInstruction:before,
+#package-registration .body .aInstruction:after {
+    content: ' ';
+    position: absolute;
+    top: 10px;
+    left: -26px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 20px 26px 20px 0;
+    border-color: transparent #E94848 transparent transparent;
+}
+
+#package-registration .body .aInstruction:after {
+    border-width: 17px 23px 17px 0;
+    border-color: transparent #F8F7F9 transparent transparent;
+    top: 13px;
+    left: -23px;
+}
+
+#package-registration .body .aInstruction .mandatory {
+    width: 10px;
+    height: 10px;
+    background-color: #E94848;
+    display: inline-block;
+    border-radius: 50%;
+}
+/* END COMMON */
+
+/*CATEGORY STEP*/
+#category-step .categories > ul {
+    margin: -10px;
+}
+
+#category-step .categories > ul > li {
+    float: left;
+    width: 33.333%;
+    padding: 10px;
+}
+
+#category-step .categories .aCategory {
+    border: solid 2px #4DBDC9;
+    cursor: pointer;
+}
+
+#category-step .categories .aCategory > .content {
+    height: 180px;
+}
+
+#category-step .categories .aCategory > .content.default {
+    text-align: center;
+    cursor: pointer;
+}
+
+#category-step .categories .aCategory > .content .img {
+    height: 100px;
+}
+
+#category-step .categories .aCategory:hover > .content.default {
+    background-color: #F8F7F9;
+}
+
+#category-step .categories .aCategory > .content.editing {
+    display: none;
+    background-color: #4DBDC9;
+    padding: 5px;
+}
+
+#category-step .categories .aCategory > .content.editing .name {
+    color: #fff;
+}
+
+#category-step .categories .aCategory.editing > .content.editing { 
+    display: block;
+}
+
+#category-step .categories .aCategory.editing > .content.default {
+    display: none;
+}
+
+#category-step .suitability .hor-selection > li {
+    width: 20%;
+}
+
+#category-step .color {
+    position: relative;
+}
+
+#category-step .color .ddl {
+    height: 35px;
+    line-height: 31px;
+    background: url(https://cdn.youtripper.com/images-vb/ddl-icon.png) 
+        no-repeat;
+    background-position: right 5px center;
+    background-color: #fff;
+    border: solid 2px #4DBDC9;
+    padding: 0 20px 0 10px;
+    color: #2B2E40;
+    cursor: default;
+}
+
+#category-step .color .ddl .color-point {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+#category-step .color .value {
+    background-color: #fff;
+    border: solid 1px #4DBDC9;
+    position: absolute;
+    width: 100%;
+    bottom: 35px;
+    display: none;
+}
+
+#category-step .color.active .value {
+    display: block;
+}
+
+#category-step .color .value > ul > li {
+    float: left;
+    width: 16.667%;
+    padding: 5px 0;
+}
+
+#category-step .color .value .color-point {
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    margin: 0 auto;
+    cursor: pointer;
+}
+/*END CATEGORY STEP*/
+
+/*DESCRIPTION STEP*/
+#description-step .language-tab {
+    margin-top: 20px;
+}
+
+#description-step .language-tab ul > li {
+    float: left;
+    position: relative;
+}
+
+#description-step .language-tab ul > li .close-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -7.5px;
+}
+
+#description-step .language-tab .aLanguage {
+    min-width: 150px;
+    line-height: 35px;
+    text-align: center;
+    cursor: pointer;
+    padding: 0 10px;
+    position: relative;
+}
+
+#description-step .language-tab .aLanguage .error {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #E94848;
+    border-radius: 50%;
+    margin-left: -10px;
+}
+
+#description-step .language-tab .aLanguage.success .error {
+    background-color: #D7E185;
+}
+
+#description-step .language-tab .aLanguage:not(.plus):hover {
+    background-color: #F8F7F9;
+}
+
+#description-step .language-tab .aLanguage.plus:hover {
+    color: #4DBDC9
+}
+
+#description-step .language-tab ul > li.active .aLanguage {
+    background-color: #F8F7F9;
+    cursor: default;
+}
+
+#description-step .language-tab .aLanguage.plus .auto-ctrl {
+    display: inline-block;
+    margin-bottom: -10px;
+}
+
+#description-step .multi-descriptions .aDescription {
+    position: relative;
+}
+
+#description-step .multi-descriptions .aDescription .close-btn {
+    position: absolute;
+    right: 8px;
+    top: 8px;
+}
+
+#description-step .multi-descriptions textarea {
+    border-top: 0;
+    height: 150px;
+}
+
+#description-step .multi-descriptions .answer > ul > li {
+    margin-bottom: 25px;
+}
+
+#description-step .multi-descriptions .answer > ul > li:last-of-type {
+    margin-bottom: 0;
+}
+
+#description-step .location .answer > .row {
+    margin-top: 15px;
+}
+
+#description-step .preview-map {
+    padding: 5px;
+    background-color: #fff;
+    border: solid 1px #F8F7F9;
+    margin-bottom: 25px;
+}
+
+#description-step .preview-map .map {
+    height: 350px;
+    background-color: #F8F7F9;
+}
+
+#description-step .location .aLocation .btns {
+    float: right;
+    width: 70px;
+}
+
+#description-step .location .aLocation .btns .edit-btn {
+    margin-bottom: 5px;
+}
+
+#description-step .location .aLocation .info {
+    margin-right: 80px;
+}
+
+#description-step .location .aLocation .svg {
+    float: left;
+    margin-right: 10px;
+}
+
+#description-step .location .aLocation .name {
+    margin-bottom: 5px;
+}
+
+#description-step .location .aLocation .editing {
+    margin-top: 10px;
+}
+
+#description-step .location .aLocation .description-input {
+    margin-right: 180px;
+}
+
+#description-step .location .aLocation .description-input textarea {
+    height: 64px;
+}
+
+#description-step .location .aLocation .time-input {
+    width: 180px;
+    float: right;
+}
+
+#description-step .location .aLocation .time-input input {
+    border-left: 0;
+}
+
+#description-step .location .aLocation.activity .icon {
+    fill: #4DBDC9;
+}
+
+#description-step .location .aLocation.departure .icon {
+    fill: #F9B03C;
+}
+
+#description-step .location .aLocation.pickup .icon {
+    fill: #D7E185;
+}
+
+#description-step .serving-language .answer > ul > li {
+    float: left;
+    width: 33.333%;
+}
+
+#description-step .keyword-input {
+    background-color: #fff;
+    border: solid 2px #4DBDC9;
+}
+
+#description-step .keywords {
+    padding: 5px 10px 0px;
+}
+
+#description-step .keywords > ul {
+    margin: -2.5px;
+}
+
+#description-step .keywords > ul > li {
+    float: left;
+    padding: 2.5px;
+}
+
+#description-step .keywords .aKeyword {
+    background-color: #4DBDC9;
+    color: #fff;
+    height: 25px;
+    line-height: 25px;
+    padding: 0 5px;
+}
+
+#description-step .keywords .aKeyword .close-btn {
+    display: inline-block;
+    margin-bottom: -3px;
+    margin-left: 5px;
+}
+
+#description-step .keyword-input input {
+    border: 0;
+}
+
+#location-popup .popup {
+    width: 500px;
+}
+
+#location-popup .editing-map {
+    position: relative;
+}
+
+#location-popup .editing-map .map {
+    height: 300px;
+    background-color: #F8F7F9;
+}
+
+#location-popup .editing-map .input {
+    position: absolute;
+    width: 100%;
+    padding: 0 15px;
+    top: 10px;
+}
+/*END DESCRIPTION STEP*/
+
+/*PHOTO STEP*/
+#photo-step .covers .uploading > ul > li {
+    margin-top: 15px;
+}
+
+#photo-step .aCover {
+    position: relative;
+}
+
+#photo-step .aCover .upload-btn,
+#photo-step .aPortrait .upload-btn,
+#photo-step .aThumbnail .upload-btn {
+    height: auto;
+    line-height: 18px;
+    margin: 0 auto;
+    padding: 10px 0;
+    border-radius: 5px;
+}
+
+#photo-step .aCover .edit-btn,
+#photo-step .aPortrait .edit-btn,
+#photo-step .aThumbnail .edit-btn {
+    position: absolute;
+    width: 50px;
+    top: 10px;
+    right: 10px;
+    color: #4DBDC9;
+    background-color: #fff;
+}
+
+#photo-step .aCover .edit-btn:hover,
+#photo-step .aPortrait .edit-btn:hover,
+#photo-step .aThumbnail .edit-btn:hover {
+    background-color: #F8F7F9;
+}
+
+#photo-step .aCover .bg {
+    background-color: #E94848;
+    width: 100%;
+    padding-bottom: 30.74%;
+}
+
+#photo-step .aCover .img {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#photo-step .aCover .img  img {
+    width: 100%;
+}
+
+#photo-step .aCover .btns {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#photo-step .aCover .upload-btn {
+    width: 250px;
+}
+
+#photo-step .aCover .edit-btn,
+#photo-step .aCover .img {
+    display: none;
+}
+
+#photo-step .aCover.uploaded .edit-btn,
+#photo-step .aCover.uploaded .img {
+    display: block;
+}
+
+#photo-step .aCover.uploaded .upload-btn {
+    display: none;
+}
+
+#photo-step .aPortrait {
+    width: 260px;
+    position: relative;
+}
+
+#photo-step .aPortrait .bg {
+    background-color: #E94848;
+    width: 100%;
+    padding-bottom: 150%;
+}
+
+#photo-step .aPortrait .upload-btn {
+    width: 200px;
+}
+
+#photo-step .aPortrait .btns {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#photo-step .aPortrait .img {
+        position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#photo-step .aPortrait .img img {
+    width: 100%;
+}
+
+#photo-step .aPortrait .img,
+#photo-step .aPortrait .edit-btn {
+    display: none;
+}
+
+#photo-step .aPortrait.uploaded .img,
+#photo-step .aPortrait.uploaded .edit-btn {
+    display: block;
+}
+
+#photo-step .aPortrait.uploaded .upload-btn {
+    display: none;
+}
+
+#photo-step .thumbnails > ul {
+    margin: -5px -10px;
+}
+
+#photo-step .thumbnails > ul > li {
+    float: left;
+    padding: 5px 10px;
+    width: 50%;
+}
+
+#photo-step .aThumbnail {
+    position: relative;
+}
+
+#photo-step .aThumbnail .upload-btn {
+    width: 200px;
+}
+
+#photo-step .aThumbnail.more {
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+}
+
+#photo-step .aThumbnail.more .auto-ctrl {
+    margin: 0 auto;
+    background-color: #fff;
+    width: 45px;
+    height: 45px;
+}
+
+#photo-step .aThumbnail.more .auto-ctrl:before,
+#photo-step .aThumbnail.more .auto-ctrl:after {
+    background: #E94848;
+}
+
+#photo-step .aThumbnail .bg {
+    background-color: #E94848;
+    width: 100%;
+    padding-bottom: 66.66%;
+}
+
+#photo-step .aThumbnail .btns {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+#photo-step .aThumbnail .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center center;
+}
+
+#photo-step .aThumbnail .img,
+#photo-step .aThumbnail .edit-btn {
+    display: none;
+}
+
+#photo-step .aThumbnail.uploaded .img,
+#photo-step .aThumbnail.uploaded .edit-btn {
+    display: block;
+}
+
+#photo-step .aThumbnail.uploaded .upload-btn {
+    display: none;
+}
+
+#photo-step .aThumbnail .close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#portrait-popup .popup {
+    min-width: 300px;
+    width: 300px;
+}
+
+#portrait-popup .resizer .origin-bar,
+#cover-popup .resizer .origin-bar {
+    background-color: #9C9B9C;
+}
+
+#portrait-popup .resizer .width-bar, 
+#cover-popup .resizer .width-bar {
+    height: 6px;
+    background-color: #4DBDC9;
+    width: 100%;
+    position: relative;
+}
+
+#portrait-popup .resizer .dragger,
+#cover-popup .resizer .dragger {
+    display: block;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 50%;
+    right: -10px;
+    background-color: #fff;
+    border: solid 2px #4DBDC9;
+    border-radius: 5px;
+    margin-top: -10px;
+    cursor: pointer;
+}
+
+#portrait-popup .aPortrait {
+    overflow: hidden;
+}
+
+#portrait-popup .aPortrait > img {
+    cursor: all-scroll;
+}
+
+#cover-popup .edit-btn {
+    display: block !important;
+}
+
+#cover-popup .aCover {
+    overflow: hidden;
+    width: 600px;
+}
+
+#cover-popup .aCover .img {
+    right: auto;
+    bottom: auto;
+    cursor: all-scroll;
+}
+
+#cover-popup .aCover .img img {
+    width: 100%;
+}
+/*END PHOTO STEP*/
+
+/*PRICE STEP*/
+#price-step .section.serving-tab {
+    padding-bottom: 0;
+    padding-top: 10px;
+}
+
+#price-step .section.serving-tab .question {
+    margin-top: 40px;
+}
+
+#price-step .servingTypes  {
+    margin-top: 15px;
+}
+
+#price-step .servingTypes > ul > li {
+    float: left;
+    width: 150px;
+}
+
+#price-step .servingTypes .aServingType {
+    text-align: center;
+    color: #C0BEBD;
+}
+
+#price-step .servingTypes .aServingType .icon {
+    fill: #C0BEBD;
+}
+
+#price-step .servingTypes .aServingType .svg {
+    cursor: pointer;
+}
+
+#price-step .servingTypes .aServingType .name {
+    height: 35px;
+    line-height: 35px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+#price-step .servingTypes > ul > li.selected .aServingType .icon {
+    fill: #4DBDC9;
+}
+
+#price-step .servingTypes > ul > li.selected .aServingType .name {
+    background-color: #F8F7F9;
+    color: #555555;
+}
+
+#price-step .question.persons .value {
+    width: 200px;
+}
+
+#price-step .question.price .value {
+    padding-left: 30px;
+}
+
+#price-step .question.price .value > ul > li {
+    margin-bottom: 10px;
+}
+
+#price-step .question.price .value > ul > li:last-of-type {
+    margin-bottom: 0;
+}
+
+#price-step .price .aPrice > ul {
+    margin: 0 -5px;
+}
+
+#price-step .price .aPrice > ul > li {
+    float: left;
+    padding: 0 5px;
+}
+
+#price-step .price .aPrice .label {
+    line-height: 35px;
+}
+
+#price-step .price .aPrice .input {
+    width: 125px;
+}
+
+#price-step .price .aPrice .btn {
+    margin-left: 20px;
+}
+
+#price-step .discounts .aDiscount > ul {
+    margin: 0 -2.5px;
+}
+
+#price-step .discounts .aDiscount > ul > li {
+    float: left;
+    padding: 0 2.5px;
+}
+
+#price-step .discounts .aDiscount .label {
+    height: 35px;
+    line-height: 35px;
+}
+
+#price-step .discounts .aDiscount .input {
+    min-width: 70px;
+}
+
+#price-step .discounts .value > ul > li {
+    margin-bottom: 10px;
+}
+
+#price-step .discounts .value > ul > li:last-of-type {
+    margin-bottom: 0;
+}
+
+#price-step .question.discounts .fixed-price {
+    padding-left: 30px;
+}
+
+#price-step .question.discounts .fixed-price .aPrice > ul {
+    margin: 0 -5px;
+}
+
+#price-step .question.discounts .fixed-price .aPrice > ul > li {
+    float: left;
+    padding: 0 5px;
+}
+
+#price-step .question.discounts .fixed-price .aPrice .input {
+    width: 125px;
+}
+
+#price-step .question.discounts .discount-price > ul > li {
+    margin-top: 10px;
+}
+
+#price-step .extra .aOption > ul {
+    margin: 0 -5px;
+}
+
+#price-step .extra .aOption > ul > li {
+    padding: 0 5px;
+    float: left;
+}
+
+#price-step .extra .value > ul > li {
+    margin-bottom: 10px;
+}
+
+#price-step .extra .value > ul > li:last-of-type {
+    margin-bottom: 0;
+}
+
+#price-step .extra .aOption .label {
+    height: 60px;
+}
+
+#price-step .extra .aOption.name .label {
+    height: 35px;
+}
+
+#price-step .extra .aOption .label.main {
+    width: 200px;
+    text-align: right;
+}
+
+#price-step .extra .aOption .input {
+    width: 150px;
+}
+
+#price-step .extra .aOption.name .input {
+    width: 200px;
+}
+
+#price-step .extra .aOption .input.option .header {
+    color: #fff;
+    background-color:  #4DBDC9;
+    position: relative;
+    text-align: center;
+    height: 25px;
+    line-height: 25px;
+}
+
+#price-step .extra .aOption .input.option .close-btn {
+    position: absolute;
+    top: 50%;
+    margin-top: -7.5px;
+    right: 5px;
+}
+
+#price-step .extra .aOption .btn {
+    cursor: pointer;
+}
+
+#price-step .extra .aOption .btn > span {
+    display: inline-block;
+}
+
+#price-step .extra .aOption .btn .auto-ctrl {
+    margin-bottom: -11px;
+}
+
+#price-step .extra .aOption .btn .txt {
+    line-height: 30px;
+    height: 30px;
+}
+
+#price-step .price-preview .header {
+    background-color: #4DBDC9;
+    color: #fff;
+    padding-left: 15px;
+    line-height: 25px;
+    margin-bottom: 15px;
+}
+
+#price-step .price-preview .detail {
+    line-height: 25px;   
+}
+
+#price-step .price-preview .detail .fee {
+    color: #E94848;
+}
+
+#price-step .price-preview .detail .payout {
+    color: #4DBDC9;
+}
+
+#price-step .price-preview .detail .info {
+    float: right;
+    width: 150px;
+}
+
+#price-step .price-preview .detail .number {
+    float: right;
+}
+/*END PRICE STEP*/
+
+/*AVAILABILITY STEP*/
+#availability-step .time-inputs > ul {
+    margin: 0 -2.5px;
+}
+
+#availability-step .time-inputs > ul > li {
+    float: left;
+    padding: 0 2.5px;
+}
+
+#availability-step .time-inputs .label {
+    height: 35px;
+    line-height: 35px;
+    color: #4DBDC9;
+}
+
+#availability-step .time-input {
+    width: 120px;
+}
+
+#availability-step .question.duration .value > ul {
+    margin: 0 -10px;
+}
+
+#availability-step .question.duration .value > ul > li {
+    float: left;
+    padding: 0 10px;
+}
+
+#availability-step .question.duration .selection {
+    width: 180px;
+}
+
+#availability-step .question.time-schedule .value > ul,
+#availability-step .question.date-schedule .value > ul {
+    margin: 0 -5px;   
+}
+
+#availability-step .question.time-schedule .value > ul > li {
+    padding: 0 5px;
+    float: left;
+    width: 33.33%;
+}
+
+#availability-step .question.date-schedule .value > ul > li {
+    padding: 0 5px;
+    float: left;
+}
+
+#availability-step .question.date-schedule .label {
+    line-height: 35px;
+}
+
+#availability-step .question.date-schedule .option {
+    width: 250px;
+}
+
+#availability-step .question.serving-time .value > ul {
+    margin: 0 -5px;
+}
+
+#availability-step .question.serving-time .value > ul > li {
+    padding: 0 5px;
+    float: left;
+}
+
+#availability-step .question.serving-time .title {
+    text-align: center;
+}
+
+#availability-step .question.slot .time-tbl {
+    margin-top: 10px;
+}
+
+#availability-step .question.slot .time-tbl .title {
+    text-decoration: underline;
+}
+
+#availability-step .question.slot .time-tbl .tbl {
+    background-color: #4DBDC9;
+    color: #fff;
+    padding: 5px 10px;
+}
+
+#availability-step .question.quota .value > ul {
+    margin: 0 -5px;
+}
+
+#availability-step .question.quota .value > ul > li {
+    float: left;
+    padding: 0 5px;
+}
+
+#availability-step .question.quota .label {
+    line-height: 35px;
+}
+
+#availability-step .question.advanced-booking .value > ul {
+    margin: 0 -5px;
+}
+
+#availability-step .question.advanced-booking .value > ul > li {
+    float: left;
+    padding: 0 5px;
+}
+
+#availability-step .question.flexible-slot .value > ul,
+#availability-step .question.blackout .value > ul {
+    margin: -5px -10px;
+}
+
+#availability-step .question.flexible-slot .value > ul > li,
+#availability-step .question.blackout .value > ul > li {
+    float: left;
+    padding: 5px 10px;
+}
+
+#availability-step .flexible-slot .aSlot,
+#availability-step .question.blackout .aSlot {
+    width: 150px;
+}
+
+#availability-step .flexible-slot .aSlot .time,
+#availability-step .question.blackout .aSlot .start {
+    position: relative;
+}
+
+#availability-step .flexible-slot .aSlot .time .yt-input,
+#availability-step .question.blackout .aSlot .start .yt-input {
+    border-bottom-width: 1px;
+    color: #fff;
+    background-color: #4DBDC9;
+}
+
+#availability-step .flexible-slot .aSlot .quota .yt-input,
+#availability-step .question.blackout .aSlot .end .yt-input {
+    border-top-width: 1px;
+}
+
+#availability-step .flexible-slot .aSlot .time .yt-input::-webkit-input-placeholder,
+#availability-step .question.blackout .aSlot .start .yt-input::-webkit-input-placeholder {
+    color:#fff;
+}
+
+#availability-step .flexible-slot .aSlot .time .yt-input:-moz-placeholder,
+#availability-step .question.blackout .aSlot .start .yt-input:-moz-placeholder {
+    color:#fff;
+    opacity: 1;
+}
+
+#availability-step .flexible-slot .aSlot .time .yt-input::-moz-placeholder,
+#availability-step .question.blackout .aSlot .start .yt-input::-moz-placeholder {
+    color:#fff;
+    opacity: 1;
+}
+
+#availability-step .flexible-slot .aSlot .time .yt-input:-ms-input-placeholder,
+#availability-step .question.blackout .aSlot .start .yt-input:-ms-input-placeholder {
+    color:#fff;
+}
+
+#availability-step .flexible-slot .aSlot .time .yt-input::-ms-input-placeholder,
+#availability-step .question.blackout .aSlot .start .yt-input::-ms-input-placeholder {
+    color:#fff;
+}
+
+#availability-step .flexible-slot .aSlot .time .close-btn,
+#availability-step .blackout .aSlot  .start .close-btn {
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    margin-top: -7.5px;
+}
+
+#availability-step .flexible-slot .aSlot .time .number,
+#availability-step .blackout .aSlot  .start .number {
+    color: #fff;
+    position: absolute;
+    line-height: 35px;
+    left: 10px;
+    z-index: 1;
+}
+
+#availability-step .flexible-slot .aSlot .quota {
+    position: relative;
+}
+
+#availability-step .flexible-slot .aSlot .quota .auto-ctrl {
+    position: absolute;
+    top: 50%;
+    margin-top: -16px;
+}
+
+#availability-step .flexible-slot .aSlot .quota .auto-ctrl.minus-ctrl {
+    left: 5px;
+}
+
+#availability-step .flexible-slot .aSlot .quota .auto-ctrl.plus-ctrl {
+    right: 5px;
+}
+
+#availability-step .flexible-slot .add-btn,
+#availability-step .blackout .add-btn {
+    height: 70px;
+    cursor: pointer;
+}
+
+#availability-step .flexible-slot .add-btn .plus-ctrl,
+#availability-step .blackout .add-btn .plus-ctrl {
+    display: inline-block;
+    margin-bottom: -15px;
+    width: 40px;
+    height: 40px;
+}
+
+#availability-step .flexible-slot .time-tbl {
+    margin-top: 10px;
+}
+
+#availability-step .flexible-slot .time-tbl .title {
+    text-decoration: underline;
+}
+
+#availability-step .flexible-slot .time-tbl .tbl {
+    color: #fff;
+    padding: 5px 10px;
+    background-color: #4DBDC9;
+    width: 150px;
+}
+
+#availability-step .flexible-slot .time-tbl .aTime .quota {
+    float: right;
+}
+
+#availability-step .flexible-slot .time-tbl .aTime .time {
+    width: 55px;
+    text-align: right;
+}
+
+#availability-step .question.start-date .input {
+    width: 130px;
+}
+
+#availability-step .question.frequency .hor-selection > li {
+    width: 16.666%;
+}
+
+#availability-step .question.frequency .subscript {
+    font-size: 9px;
+    vertical-align: top;
+}
+
+#availability-step .question.dayoff .hor-selection > li {
+    width: 14.285%;
+}
+
+
+#availability-step .calendar-preview {
+    width: 445px;
+}
+
+#availability-step .calendar-preview .month-year {
+    color: #fff;
+    background-color: #2B2E40;
+    text-align: center;
+    line-height: 50px;
+    position: relative;
+}
+
+#availability-step .calendar-preview .month-year .ctrl {
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 15px 18px 15px 0;
+    border-color: transparent #fff transparent transparent;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    left: 10px;
+    cursor: pointer;
+}
+
+#availability-step .calendar-preview.right .month-year .ctrl {
+    left: auto;
+    right: 10px;
+    border-width: 15px 0 15px 18px;
+    border-color: transparent transparent transparent #fff;
+}
+
+#availability-step .calendar-preview .days {
+    background-color: #4DBDC9;
+    text-align: center;
+    line-height: 35px;
+}
+
+#availability-step .calendar-preview .days > ul > li {
+    width: 14.285%;
+    float: left;
+}
+
+#availability-step .calendar-preview .dates {
+    padding-top: 3px;
+}
+
+#availability-step .calendar-preview .dates > ul {
+    margin: -1.5px;
+}
+
+#availability-step .calendar-preview .dates > ul > li {
+    float: left;
+    padding: 1.5px;
+    width: 14.285%;
+}
+
+#availability-step .calendar-preview .dates .aDate {
+    background-color: #E3E8F0;
+    text-align: center;
+    line-height: 60px;
+    height: 60px;
+    color: #2B2E40;
+}
+
+#availability-step .calendar-preview .dates .aDate.out {
+    color: #9C9B9C;
+}
+
+#availability-step .calendar-preview .dates .aDate.today {
+    border: solid 4px #4DBDC9;
+    line-height: 52px;
+}
+
+#availability-step .calendar-preview .dates .aDate.selected {
+    color: #fff;
+    background-color: #4DBDC9;
+}
+
+#availability-step .calendar-preview .dates .aDate.able {
+    cursor: pointer;
+}
+
+#availability-step .calendar-preview .dates .aDate.able:hover {
+    color: #4DBDC9
+}
+
+#availability-step .calendar-preview .dates .aDate.able.selected:hover {
+    color: #9C9B9C;
+}
+
+#availability-step .calendars > ul > li {
+    float: left;
+}
+
+#availability-step .question.validation-type .types > ul > li {
+    margin-bottom: 5px;
+}
+
+#availability-step .question.validation-type .types {
+    margin-bottom: 10px;
+}
+
+#availability-step .question.validation-type .range > ul {
+    margin: 0 -5px;
+}
+
+#availability-step .question.validation-type .range > ul > li {
+    float: left;
+    padding: 0 5px;
+}
+
+#availability-step .question.validation-type .range .aLimit {
+    width: 180px;
+}
+/*END AVAILABILITY STEP*/
+
+/*COMMON POPUP*/
+.common-popup .popup {
+    width: 450px;
+}
+
+.common-popup .popup .header {
+    background-color: #E94848;
+}
+
+.common-popup .popup .body {
+    text-align: center;
+}
+/*END COMMON POPUP*/
+
+/* COMMON EDITING */
+.edit-btns {
+    margin-bottom: 15px;
+    display: none;
+    position: relative;
+}
+
+.edit-btns.active {
+    display: block;
+}
+
+.edit-btns > ul {
+    margin: 0 -5px;
+} 
+
+.edit-btns > ul > li {
+    padding: 0 5px;
+}
+
+.edit-btns  .input {
+    width: 100px;
+}
+
+.edit-btns .label {
+    line-height: 35px;
+}
+
+.edit-btns .save,
+.edit-btns .cancel {
+    display: none;
+}
+
+.edit-btns.editing .edit {
+    display: none;
+}
+
+.edit-btns.editing .save,
+.edit-btns.editing .cancel {
+    display: block;
+}
+/* END COMMON EDITING */

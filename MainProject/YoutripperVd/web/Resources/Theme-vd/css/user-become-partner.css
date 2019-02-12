@@ -1,0 +1,337 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 3, 2017, 6:19:57 PM
+    Author     : nickn
+*/
+
+#become-partner .cover {
+    position: relative;
+}
+
+#become-partner .cover > .bg {
+    background-color: #4DBDC9;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    width: 100%;
+    padding-bottom: 30.72%;
+}
+
+#become-partner .cover .info {
+    color: #fff;
+    position: absolute;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 100px;
+}
+
+#become-partner .cover .info h1 {
+    font-size: 36px;
+    line-height: 45px;
+}
+
+#become-partner .cover .info input {
+    margin-top: 10px;
+}
+
+#become-partner .cover .info p {
+    padding: 10px 0;
+}
+
+#become-partner > .body .single-section {
+    padding-bottom: 40px;
+}
+
+#become-partner > .body .single-section:first-of-type {
+    padding-top: 40px;
+}
+
+#become-partner .single-section .header {
+    margin-bottom: 10px;
+    font-size: 24px;
+}
+
+#become-partner .categories > ul {
+    margin: 0 -10px;
+}
+
+#become-partner .categories > ul > li {
+    float: left;
+    width: 50%;
+    padding: 0 10px;
+}
+
+#become-partner .categories .category > img {
+    width: 100%;
+}
+
+#become-partner .categories .category .title {
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+#become-partner .categories .category p {
+    text-align: justify;
+}
+
+#become-partner .reasons > img {
+    width: 100%;
+}
+
+#become-partner .reasons > ul {
+    margin: 0 -20px;
+    margin-top: 20px;
+}
+
+#become-partner .reasons > ul > li {
+    float: left;
+    padding: 0 20px;
+    width: 33.333%;
+}
+
+#become-partner .reasons .reason .title {
+    margin-bottom: 10px;
+}
+
+#become-partner .how-it-works > ul {
+    margin: 0 -20px;    
+}
+
+#become-partner .how-it-works > ul > li {
+    float: left;
+    padding: 0 20px;
+    width: 25%;
+}
+
+#become-partner .how .img {
+    text-align: center;
+    height: 175px;
+    line-height: 175px;
+    margin-top: -15px;
+}
+
+#become-partner .how .img > img {
+    vertical-align: bottom;
+}
+
+#become-partner .how .title {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#registration-form {
+    padding-top: 40px;
+    background: rgb(76,189,201);
+    background: -moz-linear-gradient(left, rgba(24, 118, 128) 0%, rgba(43,46,64,1) 100%);
+    background: -webkit-linear-gradient(left, rgba(24, 118, 128) 0%,rgba(43,46,64,1) 100%);
+    background: linear-gradient(to right, rgba(24, 118, 128) 0%,rgba(43,46,64,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#187680', endColorstr='#2b2e40',GradientType=1 );
+}
+
+#registration-form .header {
+    color: #fff;
+}
+
+#registration-form .header h2 {
+    font-size: 36px;
+}
+
+#registration-form .form {
+    margin-top: 40px;
+}
+
+#registration-form .form .title {
+    color: #fff;
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#registration-form .form .title:before {
+    content: ' ';
+    display: block;
+    height: 1px;
+    background-color: #fff;
+    position: absolute;
+    left: 260px;
+    right: 0;
+    top: 50%;
+}
+
+#registration-form .form > ul {
+    margin: -10px -5px;
+}
+
+#registration-form .form > ul > li {
+    float: left;
+    padding: 10px 5px;
+    width: 25%;
+}
+
+#registration-form .form > ul > li.phone-code {
+    width: 10%;
+}
+
+#registration-form .form > ul > li.phone-no {
+    width: 40%;
+}
+
+#registration-form .form > ul > li.address-input {
+    width: 50%;
+}
+
+#registration-form .form .error-msg {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #E94848;
+}
+
+#registration-form .form .term {
+    display: block;
+    color: #fff;
+}
+
+#term-cb {
+    line-height: 35px;
+}
+
+#term-cb .yt-checkbox {
+    height: 35px;
+}
+
+#registration-form .slider-captcha {
+    position: relative;
+    height: 35px;
+    background-color: #fff;
+}
+
+#registration-form .slider-captcha .content {
+    line-height: 35px;
+    text-align: center;
+    font-size: 12px;
+}
+
+#registration-form .slider-captcha .success {
+    display: none;
+}
+
+#registration-form .slider-captcha .drag {
+    display: block;
+    width: 35px;
+    height: 35px;
+    background-color: #4DBDC9;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: all-scroll;
+}
+
+#registration-form .slider-captcha .drag:before {
+    content: '';
+    height: 10px;
+    width: 10px;
+    display: block;
+    border: 3px solid #fff;
+    border-left-width: 0;
+    border-top-width: 0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -7px;
+}
+
+#registration-form .slider-captcha.success .content {
+    display: none;
+}
+
+#registration-form .slider-captcha.success .content.success {
+    display: block;
+}
+
+#registration-form .slider-captcha.success .drag {
+    left: auto !important;
+    right: 0;
+    background-color: #D7E185;
+}
+
+#registration-form .slider-captcha.success .drag:before,
+#registration-form .slider-captcha.success .drag:after {
+    content: '';
+    height: 20px;
+    width: 5px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+
+#registration-form .slider-captcha.success .drag:before {
+    height: 8px;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    top: 14px;
+    left: 8px;
+    border: 0;
+    margin: 0;
+}
+
+#registration-form .slider-captcha.success .drag:after {
+    content: '';
+    height: 20px;
+    width: 5px;
+    display: block;
+    background: #fff;
+    position: absolute;
+    top: 6px;
+    left: 16px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+
+#partner-news-pop .popup {
+    width: 400px;
+}
+
+#partner-news-pop .pop-tt {
+    text-align: center;
+    font-size: 18px;
+    color: #4DBDC9;
+}
+
+#partner-news-pop .news-txt {
+    text-align: center;
+}
+
+#partner-news-pop .er-msg {
+    font-size: 12px;
+    color: #E94848;
+}
+
+#partner-news-pop .sc {
+    text-align: center;
+    color: #4DBDC9;
+}

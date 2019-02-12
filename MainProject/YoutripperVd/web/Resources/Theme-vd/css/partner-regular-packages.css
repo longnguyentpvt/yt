@@ -1,0 +1,396 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 3, 2017, 3:27:09 PM
+    Author     : nickn
+*/
+
+#partner-packages .filter  {
+    padding: 15px 0;
+}
+
+#partner-packages .filter .btn {
+    float: right;
+    width: 150px;
+}
+
+#partner-packages .filter .options {
+    margin-right: 170px;
+}
+
+#partner-packages .filter .options > ul {
+    white-space: nowrap;
+    margin: 0 -10px;
+}
+
+#partner-packages .filter .options > ul > li {
+    display: inline-block;
+    width: 33.333%;
+    padding: 0 10px;
+}
+
+#partner-packages .all-packages {
+    min-height: 400px;
+}
+
+#partner-packages .all-packages > ul {
+    margin: -10px;
+}
+
+#partner-packages .all-packages > ul > li {
+    padding: 10px;
+    width: 25%;
+    float: left;
+}
+
+#partner-packages .all-packages .aPackage  {
+    position: relative;
+}
+
+#partner-packages .all-packages .aPackage img {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#partner-packages .all-packages .aPackage .status {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#partner-packages .aPackage .status .name {
+    display: block;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    text-align: center;
+    line-height: 30px;
+    display: none;
+}
+
+#partner-packages .aPackage.editing .status .name.editing {
+    display: block;
+}
+
+#partner-packages .aPackage.creating .status .name.creating {
+    display: block;
+}
+
+#partner-packages .aPackage.pending .status .name.pending {
+    display: block;
+}
+
+#partner-packages .aPackage.approved .status .name.approved {
+    display: block;
+}
+
+#partner-packages .aPackage.fail .status .name.fail {
+    display: block;
+}
+
+#partner-packages .aPackage.not-operating .status .name.not-operating {
+    display: block;
+}
+
+#partner-packages .aPackage.deleting .status .name.deleting {
+    display: block;
+}
+
+
+
+#partner-packages .aPackage .status .options {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+#partner-packages .aPackage .status .options .icon {
+    line-height: 12px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+}
+
+#partner-packages .aPackage.editing .status .options > .icon,
+#partner-packages .aPackage.creating .status .options > .icon,
+#partner-packages .aPackage.not-operating.editing .status .options > .icon {
+    background-color: #4DBDC9;
+}
+
+#partner-packages .aPackage.pending .status .options > .icon {
+    background-color: #F0803D;
+}
+
+#partner-packages .aPackage.approved .status .options > .icon {
+    background-color: #D7E185;
+}
+
+#partner-packages .aPackage.fail .status .options > .icon,
+#partner-packages .aPackage.not-operating .status .options > .icon,
+#partner-packages .aPackage.deleting .status .options > .icon {
+    background-color: #E94848;
+}
+
+#partner-packages .aPackage .options .sub {
+    position: absolute;
+    width: 100px;
+    right: 0;
+    background-color: #fff;
+    display: none;
+    z-index: 1;
+}
+
+#partner-packages .aPackage .options.active .sub {
+    display: block;
+}
+
+#partner-packages .aPackage .options .sub > ul > li {
+    display: none;
+}
+
+#partner-packages .aPackage.creating .options .sub > ul > li.creating {
+    display: block;
+}
+
+#partner-packages .aPackage.pending .options .sub > ul > li.pending {
+    display: block;
+}
+
+#partner-packages .aPackage.approved .options .sub > ul > li.approved {
+    display: block;
+}
+
+#partner-packages .aPackage.fail .options .sub > ul > li.fail {
+    display: block;
+}
+
+#partner-packages .aPackage.not-operating .options .sub > ul > li.not-operating {
+    display: block;
+}
+
+#partner-packages .aPackage.editing .options .sub > ul > li.editing {
+    display: block;
+}
+
+#partner-packages .aPackage.editing.not-operating .options .sub > ul > li.off {
+    display: none;
+}
+
+#partner-packages .aPackage.deleting .options .sub > ul > li.deleting {
+    display: block;
+}
+
+#partner-packages .aPackage .options .aSub {
+    line-height: 25px;
+    color: #9c9b9c;
+    padding: 0 5px;
+    cursor: pointer;
+}
+
+#partner-packages .aPackage .options .aSub > .svg {
+    display: block;
+    float: left;
+    line-height: 25px;
+    text-align: center;
+    width: 15px;
+}
+
+#partner-packages .aPackage .options .aSub > .svg .svg {
+    vertical-align: middle;
+}
+
+#partner-packages .aPackage .options .aSub .txt {
+    margin-left: 20px;
+    display: block;
+}
+
+#partner-packages .aPackage .options .aSub .icon {
+    fill: #9c9b9c;
+}
+
+#partner-packages .aPackage .options .aSub:hover {
+    color: #4DBDC9;
+}
+
+#partner-packages .aPackage .options .aSub:hover .icon {
+    fill: #4DBDC9;
+}
+
+#partner-packages .aPackage > .info {
+    position: absolute;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    color: #fff;
+    padding: 10px 10px 0px 10px;
+}
+
+#partner-packages .aPackage > .info .name {
+    margin-bottom: 5px;
+}
+
+#partner-packages .aPackage > .info .name a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+#partner-packages .aPackage > .info .name a {
+    height: 42px;
+    overflow: hidden;
+}
+
+#partner-packages .aPackage > .info .sub > ul > li{
+    float: left;
+    width: 33.333%;
+}
+
+#partner-packages .aPackage > .info .reviews {
+    text-align: right;
+}
+
+#partner-packages .aPackage .rates {
+    display: table;
+    margin: 0 auto;
+}
+
+#partner-packages .aPackage .rates > ul > li {
+    display: inline-block;
+    padding: 0 1px;
+}
+
+#partner-packages .aPackage .rates .rate .icon {
+    fill: #fff;
+}
+
+#partner-packages .aPackage .rates .rate .icon.fill {
+    display: none;
+}
+
+#partner-packages .aPackage .rates .rate.active .icon {
+    display: none;
+}
+
+#partner-packages .aPackage .rates .rate.active .icon.fill {
+    display: block;
+}
+
+#partner-packages .aPackage .price {
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+}
+
+#partner-packages .aPackage .price > ul > li {
+    margin-bottom: 10px;
+}
+
+#editing-popup .popup,
+#deleting-popup .popup,
+#clone-popup .popup {
+    width: 450px;
+}
+
+#editing-popup .popup .header,
+#deleting-popup .popup .header,
+#clone-popup .popup .header {
+    background-color: #E94848;
+}
+
+#editing-popup .aOption {
+    padding-left: 30px;
+}
+
+#editing-popup .aOption .option {
+    margin-bottom: 10px;
+}
+
+#editing-popup .aOption .text {
+    font-size: 12px;
+    padding-left: 25px;
+}
+
+#partner-packages .aPackage .aPrice.discount {
+    background-color: #E94848;
+}
+
+#partner-packages .aPackage .aPrice.discount .percent {
+    font-size: 9px;
+}
+
+#partner-packages .aPackage .aPrice.discount .normal {
+    text-decoration: line-through;
+}
+
+#partner-packages .aPackage .aPrice.discount > span {
+    display: block;
+}
+
+#partner-packages .aPackage .aPrice {
+    color: #fff;
+    height: 30px;
+    float: right
+}
+
+#partner-packages .aPackage .aPrice .number {
+    text-align: right;
+    padding: 0 10px;
+    background-color: #F9B03C;
+}
+
+#partner-packages .aPackage .aPrice .old {
+    line-height: 11px;
+    margin-top: 2px;
+    text-decoration: line-through;
+    color: #9C9B9C;
+}
+
+#partner-packages .aPackage .aPrice .main {
+    line-height: 18px;
+}
+
+#partner-packages .aPackage .aPrice .promotion {
+    padding: 0 5px;
+    background-color: #E94848;
+    text-align: center;
+}
+
+#partner-packages .aPackage .aPrice .promotion .percent {
+    line-height: 15px;
+}
+
+#partner-packages .aPackage .aPrice .promotion .label {
+    line-height: 11px;
+}
+
+#partner-packages .aPackage .aPrice .promotion,
+#partner-packages .aPackage .aPrice .number {
+    height: 30px;
+    display: inline-block;
+}
+
+#partner-packages .aPackage .aPrice .promotion,
+#partner-packages .aPackage .aPrice .number .old {
+    display: none;
+}
+
+#partner-packages .aPackage .aPrice.promotional .promotion {
+    display: inline-block;
+}
+
+#partner-packages .aPackage .aPrice.promotional .number {
+    background-color: #fff;
+}
+
+#partner-packages .aPackage .aPrice.promotional .number .old {
+    display: block;
+}
+
+#partner-packages .aPackage .aPrice.promotional .number .main {
+    color: #E94848;
+}

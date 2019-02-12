@@ -1,0 +1,307 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 6, 2018, 3:07:57 PM
+    Author     : nickn
+*/
+
+body {
+    background-color: #E3E8F0;
+}
+
+#td-db {
+    padding: 15px 0;
+}
+
+#top-info > ul {
+    margin: 0 -5px;
+}
+
+#top-info > ul > li {
+    display: inline-block;
+    width: 25%;
+    padding: 0 5px;
+    vertical-align: top;
+}
+
+#top-info .aBox {
+    background-color: #FFF;
+}
+
+#top-info .aBox .b-tt {
+    background-color: #4DBDC9;
+    color: #FFF;
+    text-align: center;
+    padding: 5px 0;
+}
+
+#top-info .aBox .b-bd{
+    position: relative
+}
+
+#top-info .aBox .rows > ul > li {
+    border-bottom: solid 1px #4DBDC9;
+}
+
+#top-info .aBox .rows > ul > li:last-of-type {
+    border-bottom: 0;
+}
+
+#top-info .aBox .rows.t-rows .aI {
+    padding: 2px 5px;
+}
+
+#o-box .aI .i-no {
+    text-align: right;
+    color: #4DBDC9;
+}
+
+.hg-box .aI .i-tt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.hg-box .aI .i-no .price {
+    float: right;
+    color: #4DBDC9;
+}
+
+.hg-box .aI .i-no .p-id {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    color: #9c9b9c;
+}
+
+#bs-box .aI {
+    padding: 2px 5px;
+}
+
+#bs-box .aI .i-tt {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#bs-box .aI .i-no {
+    margin-top: 4px;
+}
+
+#bs-box .aI .p-bar {
+    height: 20px;
+    background-color: #E94848;
+}
+
+#bs-box .aI .p-bar .pc {
+    height: 20px;
+    background-color: #4DBDC9;
+}
+
+#bs-box .aI .i-no .no {
+    font-size: 14px;
+    line-height: 20px;
+}
+
+#bs-box .aI .i-no .l-no {
+    float: right;
+    color: #9C9B9C;
+}
+
+#bs-box .aI .i-no .c-no {
+    float: left;
+    color: #9C9B9C;
+}
+
+#bs-box .aI .i-no .p-no {
+    text-align: center;
+    color: #4DBDC9;
+}
+
+#ut-tb  {
+    margin-top: 15px;
+    position: relative
+}
+
+#ut-tb .ut-tt {
+    font-size: 18px;
+}
+
+#ut-tb .tbl {
+    font-size: 12px;
+
+}
+
+#ut-tb .tbl .row:nth-of-type(odd) {
+    background-color: #F8F7F9;
+}
+
+#ut-tb .tbl .row:nth-of-type(even) {
+    background-color: #FFF;
+}
+
+#ut-tb .tbl .cols > ul > li {
+    float: left;
+    border-right: solid 1px #E3E8F0;
+}
+#ut-tb .tbl .cols > ul > li:last-of-type {
+    border-right: 0;
+}
+
+#ut-tb .tbl .row.h-row {
+    background-color: #4DBDC9;
+}
+
+#ut-tb .tbl .row .col-t {
+    padding: 0 5px;
+}
+
+#ut-tb .tbl .row.h-row .col-t {
+    height: 45px;
+    color: #FFF;
+}
+
+#ut-tb .tbl .aCol.bo-col .col-t {
+    width: 114px;
+    text-align: center;
+}
+
+#ut-tb .tbl .aCol.bd-col .col-t {
+    width: 95px;
+    text-align: center;
+}
+
+#ut-tb .tbl .aCol.st-col .col-t {
+    width: 95px;
+    text-align: center;
+}
+
+#ut-tb .tbl .aCol.tp-col .col-t {
+    width: 200px;
+}
+
+#ut-tb .tbl .aCol.pn-col .col-t {
+    width: 450px;
+}
+
+#ut-tb .tbl .aCol.qty-col .col-t {
+    width: 80px;
+    text-align: center;
+}
+
+#ut-tb .tbl .aCol.cn-col .col-t {
+    width: 80px;
+    text-align: center;
+}
+
+#ut-tb .row.o-row .col-t {
+    padding: 2px 5px;
+    overflow: hidden;
+    height: 40px;
+}
+
+#ut-tb .qty-col .qty-no {
+    width: 30px;
+    height: 30px;
+    background-color: #F9B03C;
+    display: inline-block;
+    line-height: 30px;
+    color: #FFF;
+    border-radius: 50%;
+}
+
+#ut-tb .cn-col .cn-ico .off-cn {
+    display: none;
+}
+
+#ut-tb .cn-col .cn-ico.off .off-cn {
+    display: inline-block;
+}
+
+#ut-tb .cn-col .cn-ico.off .yt-cn {
+    display: none;
+}
+
+#ut-tb .no-rows {
+    text-align: center;
+    line-height: 50px;
+    background-color: #FFF;
+}
+
+#ut-tb .paging {
+    margin-top: 5px;
+}
+
+#ut-tb .paging > ul {
+    text-align: right;
+}
+
+#ut-tb .paging > ul > li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#ut-tb .paging .page {
+    line-height: 30px;
+    font-size: 12px;
+}
+
+#ut-tb .paging .ctrls .btn {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-color: #D6D4D4;
+    cursor: pointer;
+    -webkit-transition: background-color 0.15s;
+    -o-transition: background-color 0.15s;
+    -moz-transition: background-color 0.15s;
+    -ms-transition: background-color 0.15s;
+    transition: background-color 0.15s;
+    position: relative;
+}
+
+#ut-tb .paging .ctrls .btn:hover {
+    background-color: #b5b4b4;
+}
+
+#ut-tb .paging .ctrls > ul {
+    margin: 0 -2.5px;
+}
+
+#ut-tb .paging .ctrls > ul > li {
+    float: left;
+    padding: 0 2.5px;
+}
+
+#ut-tb .paging .ctrls .btn:before {
+    content: ' ';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-style: solid;
+    border-color: #FFF;
+    border-width: 4px 4px 0 0;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 0 4px 0 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7px;
+    margin-left: -8px;
+}
+
+#ut-tb .paging .ctrls .btn.prv:before {
+    border-width: 0 0 4px 4px;
+    left: auto;
+    right: 50%;
+    margin-right: -8px;
+    border-radius: 0 0 0 4px;
+}
+

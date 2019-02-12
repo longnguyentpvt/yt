@@ -1,0 +1,371 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!-- was: <?xml version="1.0" encoding="UTF-8"?> -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:websocket="http://www.springframework.org/schema/websocket"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task ="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+    http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+    http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+    http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd
+    http://www.springframework.org/schema/websocket http://www.springframework.org/schema/websocket/spring-websocket-4.0.xsd">     
+
+    <context:component-scan base-package="yt" />
+    <mvc:annotation-driven>
+        <mvc:argument-resolvers>
+            <bean class="org.springframework.mobile.device.DeviceWebArgumentResolver" />
+        </mvc:argument-resolvers>
+    </mvc:annotation-driven>
+    <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+    
+    <!--CONFIGURATION-->
+    <context:property-placeholder location="classpath:youtripper.properties" />
+    <!--END CONFIGURATION-->
+    <bean
+        class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix">
+            <value>/WEB-INF/view-vd/</value>
+        </property>
+        <property name="suffix">
+            <value>.jsp</value> 
+        </property>
+    </bean>
+
+    <mvc:resources mapping="/Resources/**" location="/Resources/Theme-vd"  
+                   cache-period="604800"/>
+    <!--LOCALE-->
+    <bean id="messageSource"
+          class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>classpath:common</value>
+                <value>classpath:home</value>
+                <value>classpath:loginout</value>
+                <value>classpath:packageregistration</value>
+                <value>classpath:partnerbookinghistory</value>
+                <value>classpath:partnerbookingmanager</value>
+                <value>classpath:partnerprofile</value>
+                <value>classpath:partnertrippdash</value>
+                <value>classpath:partnerverification</value>
+                <value>classpath:partnercertificate</value>
+                <value>classpath:partnerpayment</value>
+                <value>classpath:signup</value>
+                <value>classpath:tripperprofile</value>
+                <value>classpath:youtripper</value>
+            </list>
+        </property>
+        <property name="defaultEncoding" value="UTF-8" />
+    </bean>
+    
+    <bean id="localeResolver"
+          class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="en" />
+    </bean>
+    <!--END LOCALE-->
+    
+    <mvc:interceptors>
+        <!-- On pre-handle, resolve the device that originated the web request -->
+        <bean class="org.springframework.mobile.device.DeviceResolverHandlerInterceptor" />
+  
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/Resources/**"/>
+            <mvc:exclude-mapping path="/activation/ytpartner/**"/>
+            <bean
+                class="yt.interceptor.LocaleUrlInterceptor">
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/partner/**"/>
+            <mvc:mapping path="/{locale}/partner/**"/>
+            <bean
+                class="yt.interceptor.PartnerInterceptor">
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/tripper/**"/>
+            <mvc:mapping path="/{locale}/tripper/**"/>
+            <bean
+                class="yt.interceptor.TripperInterceptor">
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    
+    
+    <!--HIBERNATE-->
+    <bean id="dataSource"  
+          class="org.springframework.jdbc.datasource.DriverManagerDataSource" scope="singleton">  
+        <property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />
+        <!-- LOCALHOST -->
+        <property name="url" value="jdbc:sqlserver://192.168.1.139\SQLEXPRESS:1433;databaseName=YoutripperDBvd" />
+        <property name="username" value="sa" />
+        <property name="password" value="Youtripper@2018" />
+        <!-- END LOCALHOST  -->
+
+        <!--4949-->
+        <!--<property name="url" value="jdbc:sqlserver://youtripper.i234.me\SQLEXPRESS:3333;databaseName=YoutripperDBvd" />-->
+        <!--<property name="url" value="jdbc:sqlserver://localhost\SQLEXPRESS:1433;databaseName=YoutripperDBvd" />
+        <property name="username" value="sa" />
+        <property name="password" value="Youtripper@2018" />-->
+        <!--END 4949-->
+        
+        <!--AMAZON-->       
+        <!--        <property name="url" value="jdbc:sqlserver://localhost\SQLEXPRESS:1433;databaseName=20171219YoutripperDB" />
+        <property name="url" value="jdbc:sqlserver://13.228.139.148\SQLEXPRESS:1433;databaseName=20171219YoutripperDB" />
+        <property name="username" value="sa" />
+        <property name="password" value="Youtripper@2017" />-->
+        <!--END AMAZON-->
+
+    </bean>
+    
+    <bean id="hibernate4AnnotatedSessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <property name="annotatedClasses">
+            <list>
+                <value>yt.entity.tbl.BookingTransaction</value>
+                <value>yt.entity.tbl.Country</value>
+                <value>yt.entity.tbl.DiscountCode</value>
+                <value>yt.entity.tbl.DiscountCurrency</value>
+                <value>yt.entity.tbl.InvoiceGeneration</value>
+                <value>yt.entity.tbl.JavascriptLog</value>
+                <value>yt.entity.tbl.LineLoginTransaction</value>
+                <value>yt.entity.tbl.OrderGeneration</value>               
+                <value>yt.entity.tbl.PackageCity</value>
+                <value>yt.entity.tbl.PackageCityTranslation</value>
+                <value>yt.entity.tbl.PackageCountry</value>
+                <value>yt.entity.tbl.PackageCountryTranslation</value>                               
+                <value>yt.entity.tbl.PackageCurrency</value>
+                <value>yt.entity.tbl.Partner</value>
+                <value>yt.entity.tbl.PartnerBankFile</value>
+                <value>yt.entity.tbl.PartnerCertificate</value>
+                <value>yt.entity.tbl.PartnerContact</value>
+                <value>yt.entity.tbl.PartnerCountry</value>
+                <value>yt.entity.tbl.PartnerPersonalFile</value>
+                <value>yt.entity.tbl.PartnerRegistrationNumber</value>
+                <value>yt.entity.tbl.PartnerState</value>
+                <value>yt.entity.tbl.RememberLoginToken</value>
+                <value>yt.entity.tbl.State</value>
+                <value>yt.entity.tbl.TargetLocation</value>
+                <value>yt.entity.tbl.TargetLocationContent</value>
+                <value>yt.entity.tbl.TemporaryPackage</value>
+                <value>yt.entity.tbl.TemporaryPackageContent</value>
+                <value>yt.entity.tbl.TemporaryPackagePicture</value>
+                <value>yt.entity.tbl.TemporaryPackagePrice</value>
+                <value>yt.entity.tbl.Tripper</value>
+                <value>yt.entity.tbl.TripperBillingAddress</value>
+                <value>yt.entity.tbl.TripperCreditCard</value>
+                <value>yt.entity.tbl.TripperRegistrationNumber</value>
+                <value>yt.entity.tbl.TripperWishlist</value>
+                <value>yt.entity.tbl.YTBookingOrder</value>
+                <value>yt.entity.tbl.YTCategory</value>
+                <value>yt.entity.tbl.YTCategoryContent</value>
+                <value>yt.entity.tbl.YTEmail</value>
+                <value>yt.entity.tbl.YTPackage</value>
+                <value>yt.entity.tbl.YTPackageContent</value>
+                <value>yt.entity.tbl.YTPackagePrice</value>
+                <value>yt.entity.tbl.YTPackageReview</value>
+                <value>yt.entity.tbl.YTSubCategory</value>
+                <value>yt.entity.tbl.YTSubCategoryContent</value>
+                
+                <value>yt.entity.view.AbleResendPartnerActivation</value>
+                <value>yt.entity.view.HottestDeal</value>
+                <value>yt.entity.view.KeywordSearchSuggestion</value>
+                <value>yt.entity.view.LatestBookedPackage</value>
+                <value>yt.entity.view.PartnerActivation</value>
+                <value>yt.entity.view.PartnerExistEmail</value>
+                <value>yt.entity.view.PartnerPackage</value>
+                <value>yt.entity.view.RememberLoginInfo</value>
+                <value>yt.entity.view.TripperActivation</value>
+                <value>yt.entity.view.TripperExistEmail</value>
+                <value>yt.entity.view.TripperFacebookLoginInfo</value>
+                <value>yt.entity.view.TripperGoogleLoginInfo</value>
+                <value>yt.entity.view.TripperLinepayLoginInfo</value>
+            </list>
+        </property>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</prop>             
+                <!--                <prop key="hibernate.show_sql">true</prop>-->
+                <prop key="hibernate.show_sql">false</prop>
+                <prop key="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</prop>
+            </props>
+        </property>
+    </bean>
+    
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="hibernate4AnnotatedSessionFactory" />
+    </bean>
+    <!--END HIBERNATE-->
+    
+    <!--DECLARE SINGLETON-->
+    
+    <!--checkout func-->
+    <bean id="ytPackageCheckoutDAO" class="yt.func.checkout.dao.YTPackageDAO" scope="singleton"/>
+    <bean id="bookingCheckoutTransactionDAO" class="yt.func.checkout.dao.BookingTransactionDAO" scope="singleton"/>
+    <bean id="orderCheckoutGenerationDAO" class="yt.func.checkout.dao.OrderGenerationDAO" scope="singleton"/>
+    <bean id="ytCheckoutBookingOrderDAO" class="yt.func.checkout.dao.YTBookingOrderDAO" scope="singleton"/>
+    <bean id="packageCheckoutCurrencyDAO" class="yt.func.checkout.dao.PackageCurrencyDAO" scope="singleton"/>
+    <bean id="ytCheckoutInvoiceGenerationDAO" class="yt.func.checkout.dao.InvoiceGenerationDAO" scope="singleton"/>
+    <bean id="packageCheckoutDiscountCodeDAO" class="yt.func.checkout.dao.DiscountCodeDAO" scope="singleton"/>
+    
+    <bean id="checkoutService" class="yt.func.checkout.service.CheckoutServiceImpl" scope="singleton"/>
+    <bean id="ytCheckoutCompleteService" class="yt.func.checkout.service.CompleteServiceImpl" scope="singleton"/>
+    <!--end checkout func-->
+
+    <!--home func-->
+    <bean id="homeService" class="yt.func.home.HomeService" scope="singleton"/>
+    <bean id="homePackageService" class="yt.func.home.service.HomePackageServiceImpl" scope="singleton"/>
+    <bean id="homePackageDAO" class="yt.func.home.dao.YTPackageDAO" scope="singleton"/>
+    <!--end home func-->
+    
+    <!--javascript log-->   
+    <bean id="javascriptLogService" class="yt.func.javacriptLog.service.JavascriptLogServiceImpl" scope="singleton"/>
+    <bean id="javascriptLogDAO" class="yt.func.javacriptLog.dao.JavascriptLogDAO" scope="singleton"/>
+    <!--end javascript log-->
+    
+    <!--loginout function-->
+    <bean id="logInOutService" class="yt.func.loginout.service.LogInOutServiceImpl" scope="singleton"/>
+    
+    <bean id="loginoutRememberTokenDAO" class="yt.func.loginout.dao.RememberTokenDAO" scope="singleton"/>
+    <bean id="loginoutTripperDAO" class="yt.func.loginout.dao.TripperDAO" scope="singleton"/>
+    <bean id="loginoutPartnerDAO" class="yt.func.loginout.dao.PartnerDAO" scope="singleton"/>
+    <bean id="loginoutLineTransactionDAO" class="yt.func.loginout.dao.LineLoginTransactionDAO" scope="singleton"/>
+    <!--end loginout function-->
+    
+    <!--package detail function-->
+    <bean id="packageDetailService" class="yt.func.packagedetail.service.PackageDetailServiceImpl" scope="singleton"/>
+    
+    <bean id="ytPkgDetailDAO" class="yt.func.packagedetail.dao.YTPackageDAO" scope="singleton"/>
+    <!--end package detail function-->
+    
+    <!--package registration function-->
+    <bean id="packageRegistrationService" class="yt.func.packageregistration.service.PackageRegistrationServiceImpl" scope="singleton"/>
+    <bean id="categoryRegistrationService" class="yt.func.packageregistration.service.CategoryRegistrationServiceImpl" scope="singleton"/>
+    <bean id="descriptionRegistrationService" class="yt.func.packageregistration.service.DescriptionRegistrationServiceImpl" scope="singleton"/>
+    <bean id="photoRegistrationService" class="yt.func.packageregistration.service.PhotoRegistrationServiceImpl" scope="singleton"/>
+    
+    <bean id="tempPkgResgistrationDAO" class="yt.func.packageregistration.dao.TemporaryPackageDAO" scope="singleton"/>
+    <bean id="tempPkgPriceRegistrationDAO" class="yt.func.packageregistration.dao.TemporaryPackagePriceDAO" scope="singleton"/>
+    <bean id="tempPkgContentRegistrationDAO" class="yt.func.packageregistration.dao.TemporaryPackageContentDAO" scope="singleton"/>
+    <bean id="ytPkgRegistrationDAO" class="yt.func.packageregistration.dao.YTPackageDAO" scope="singleton"/>
+    <bean id="pkgTargetLocationRegistrationDAO" class="yt.func.packageregistration.dao.TargetLocationDAO" scope="singleton"/>
+    <bean id="pkgSubCategoryRegistrationDAO" class="yt.func.packageregistration.dao.YTSubCategoryDAO" scope="singleton"/>
+    <bean id="tempPkgPictureResgistrationDAO" class="yt.func.packageregistration.dao.TemporaryPackagePictureDAO" scope="singleton"/>
+    <!--end package registration function-->
+    
+    <!--partner booking history function-->
+    <bean id="partnerBookingHistoryService" class="yt.func.partnerbookinghistory.service.PartnerBookingHistoryServiceImpl" scope="singleton"/>
+    <bean id="partnerBookingHistoryOrderDAO" class="yt.func.partnerbookinghistory.dao.YTBookingOrderDAO" scope="singleton"/>
+    <bean id="partnerBookingHistoryPackageDAO" class="yt.func.partnerbookinghistory.dao.YTPackageDAO" scope="singleton"/>
+    <!--end partner booking history function-->
+    
+    <!--partner booking manager function-->
+    <bean id="partnerBookingManagerService" class="yt.func.partnerbookingmanager.service.PartnerBookingManagerServiceImpl" scope="singleton"/>
+    <bean id="partnerBookingOrderDAO" class="yt.func.partnerbookingmanager.dao.YTBookingOrderDAO" scope="singleton"/>
+    <bean id="partnerBookingPackageDAO" class="yt.func.partnerbookingmanager.dao.YTPackageDAO" scope="singleton"/>
+    <!--end partner booking manager function-->
+    
+    <!--partner certification func-->
+    <bean id="partnerCertificationService" class="yt.func.partnercertificate.service.PartnerCertificationServiceImpl" scope="singleton"/>
+ 
+    <bean id="partnerCertificationDAO" class="yt.func.partnercertificate.dao.PartnerCertificationDAO" scope="singleton"/>
+    <!--end partner certification func-->
+    
+    <!--mypackage function-->
+    <bean id="myPackageService" class="yt.func.partnerpackage.service.MyPackageServiceImpl" scope="singleton"/>
+    
+    <bean id="myPackageDAO" class="yt.func.partnerpackage.dao.YTPackageDAO" scope="singleton"/>
+    <!--end mypackage function-->
+    
+    <!--partnerpayment function-->
+    <bean id="partnerPaymentService" class="yt.func.partnerpayment.service.PartnerPaymentServiceImpl" scope="singleton"/>
+    <bean id="partnerPaymentOrderDAO" class="yt.func.partnerpayment.dao.YTBookingOrderDAO" scope="singleton"/>
+    <!--end partnerpayment function-->
+    
+    <!--partner profile func-->
+    <bean id="partnerprofileService" class="yt.func.partnerprofile.service.PartnerProfileServiceImpl" scope="singleton"/>
+   
+    <bean id="partnerprofilePartnerDAO" class="yt.func.partnerprofile.dao.PartnerDAO" scope="singleton"/>
+    <!--end partner profile func-->
+    
+    <!--partner tripp dash func-->
+    <bean id="partnerTrippDashService" class="yt.func.partnertrippdash.service.PartnerTrippDashServiceImpl" scope="singleton"/>
+    <bean id="partnerTrippDashPackageDAO" class="yt.func.partnertrippdash.dao.YTPackageDAO" scope="singleton"/>
+    <bean id="partnerTrippDashBookingOrderDAO" class="yt.func.partnertrippdash.dao.YTBookingOrderDAO" scope="singleton"/>
+    <!--end partner certification func-->
+    
+    <!--partner verfication func-->
+    <bean id="partnerVerificationService" class="yt.func.partnerverification.service.PartnerVerificationServiceImpl" scope="singleton"/>  
+    <bean id="partnerPersonalFileDAO" class="yt.func.partnerverification.dao.PartnerPersonalFileDAO" scope="singleton"/>
+    <bean id="verificationPartnerDAO" class="yt.func.partnerverification.dao.PartnerDAO" scope="singleton"/>
+    <bean id="partnerBankFileDAO" class="yt.func.partnerverification.dao.PartnerBankFileDAO" scope="singleton"/>
+    <!--end partner verfication func-->
+    
+    <!--search func-->
+    <bean id="searchService" class="yt.func.search.service.SearchServiceImpl" scope="singleton"/>
+    <bean id="searchPackageCountryTranslationDAO" class="yt.func.search.dao.PackageCountryTranslationDAO" scope="singleton"/>
+    <bean id="searchPackageCityTranslationDAO" class="yt.func.search.dao.PackageCityTranslationDAO" scope="singleton"/>
+    <bean id="searchYTSubCategoryContentDAO" class="yt.func.search.dao.YTSubCategoryContentDAO" scope="singleton"/>
+    <bean id="searchYTCategoryDAO" class="yt.func.search.dao.YTCategoryDAO" scope="singleton"/>
+    <bean id="searchYTPackageKeywordDAO" class="yt.func.search.dao.YTPackageKeywordDAO" scope="singleton"/>
+    <!--end search func-->
+    
+    <!--signup func-->
+    <bean id="signupService" class="yt.func.signup.service.SignupServiceImpl" scope="singleton"/>
+    <bean id="signupEmailService" class="yt.func.signup.service.EmailServiceImpl" scope="singleton"/>
+    
+    <bean id="partnerSignupCountryDAO" class="yt.func.signup.dao.PartnerCountryDAO" scope="singleton"/>
+    <bean id="partnerSignupStateDAO" class="yt.func.signup.dao.PartnerStateDAO" scope="singleton"/>
+    <bean id="signupTripperDAO" class="yt.func.signup.dao.TripperDAO" scope="singleton"/>
+    <bean id="signupPartnerDAO" class="yt.func.signup.dao.PartnerDAO" scope="singleton"/>
+    <bean id="signupYTEmailDAO" class="yt.func.signup.dao.YTEmailDAO" scope="singleton"/>
+    <bean id="signupTripperCountryDAO" class="yt.func.signup.dao.CountryDAO" scope="singleton"/>
+    <bean id="signupPartnerRegistrationNumberDAO" class="yt.func.signup.dao.PartnerRegistrationNumberDAO" scope="singleton"/>
+    <bean id="signupTripperRegistrationNumberDAO" class="yt.func.signup.dao.TripperRegistrationNumberDAO" scope="singleton"/>
+    <bean id="signupPartnerContactDAO" class="yt.func.signup.dao.PartnerContactDAO" scope="singleton"/>
+    <!--end signup func-->
+    
+    <!--test func-->
+    <bean id="testService" class="yt.func.test.service.TestServiceImpl" scope="singleton"/>
+    <!--end test func-->
+    
+    <!--tripper booking func-->
+    <bean id="tripperBookingService" class="yt.func.tripperbooking.service.TripperBookingServiceImpl" scope="singleton"/>
+    <bean id="myBookingOrderDAO" class="yt.func.tripperbooking.dao.YTBookingOrderDAO" scope="singleton"/>
+    <!--end tripper booking func-->
+    
+    <!--tripper bucket-->
+    <bean id="tripperBucketService" class="yt.func.tripperbucket.service.TripperBucketServiceImpl" scope="singleton"/>
+    <bean id="tripperWishlistDAO" class="yt.func.tripperbucket.dao.TripperWishlistDAO" scope="singleton"/>
+    <!--end tripper bucket-->
+    
+    <!--tripper profile func-->
+    <bean id="tripperprofileService" class="yt.func.tripperprofile.service.TripperProfileServiceImpl" scope="singleton"/>
+    <bean id="tripperProfileTripperDAO" class="yt.func.tripperprofile.dao.TripperDAO" scope="singleton"/>
+    <bean id="tripperCountryDAO" class="yt.func.tripperprofile.dao.CountryDAO" scope="singleton"/>
+    <bean id="tripperProfileCardDAO" class="yt.func.tripperprofile.dao.TripperCreditCardDAO" scope="singleton"/>
+    <bean id="tripperProfileBillingDAO" class="yt.func.tripperprofile.dao.TripperBillingAddressDAO" scope="singleton"/>
+    <!--endtripper profile func-->
+    
+    <!--END DECLARE SINGLETON-->
+    
+    <!--ASYN-->
+    <task:executor id="myexecutor" pool-size="5"  />
+    <task:annotation-driven executor="myexecutor"/>
+    <!--END ASYN-->
+    
+    <!--TASK SCHEDULE-->
+    <bean id="fiveScheduler" class="yt.scheduler.FiveScheduler"/>
+    <task:scheduled-tasks>
+        <task:scheduled ref="fiveScheduler" method="expireBooking" cron="5 0/5 * * * *" />  
+    </task:scheduled-tasks>
+    <!--END TASK SCHEDULE-->
+</beans>

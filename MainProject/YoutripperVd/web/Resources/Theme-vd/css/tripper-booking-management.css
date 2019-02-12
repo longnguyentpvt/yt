@@ -1,0 +1,215 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 3, 2018, 12:53:21 PM
+    Author     : nickn
+*/
+
+#bm-filter > ul {
+    margin: 0 -10px;
+}
+
+#bm-filter > ul > li {
+    display: inline-block;
+    padding: 0 10px;
+}
+
+#bm-filter .af {
+    width: 200px;
+}
+
+#bks > ul > li {
+    margin-top: 15px;
+}
+
+#bks .abk .bk-h {
+    color: #FFF;
+    background-color: #4DBDC9;
+    height: 30px;
+    padding-left: 10px;
+}
+
+#bks .abk.f-bk .bk-h {
+    background-color: #E94848;
+}
+
+#bks .abk .bk-h .orderNo,
+#bks .abk .bk-h .bd-txt {
+    line-height: 30px;
+}
+
+#bks .abk .h-r {
+    float: right;
+}
+
+#bks .abk .h-r .ops {
+    float: right;
+    position: relative;
+}
+
+#bks .abk .h-r .ops .hbg {
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    line-height: 30px;
+    background-color: #D7E185;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+#bks .abk .ops .mn {
+    position: absolute;
+    right: 0;
+    background-color: #D6D4D4;
+    width: 150px;
+    display: none;
+}
+
+#bks .abk .ops .mn .am {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#bks .abk.f-bk .ops .mn .iv-m {
+    display: none;
+}
+
+#bks .abk .ops .mn .am:hover {
+    background-color: #b5b4b4;
+}
+
+#bks .abk .ops.op .mn {
+    display: block;
+}
+
+#bks .abk .bk-b {
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+#bks .abk .thumb {
+    float: left;
+    width: 130px;
+    margin-right: 10px;
+}
+
+#bks .abk .thumb .bg {
+    background-color: #4DBDC9;
+    padding-bottom: 150%;
+}
+
+#bks .abk .bk-info .info {
+    margin-left: 140px;
+}
+
+#bks .abk .bk-info .info .lb {
+    width: 120px;
+    float: left;
+    text-align: right;
+    padding-right: 10px;
+}
+
+#bks .abk .bk-info .info .vl {
+    color: #9C9B9C;
+}
+
+#bks .abk .bk-info .stt-r .vl {
+    color: #4DBDC9;
+}
+
+#bks .abk .bk-info .tt-r .vl {
+    color: #F9B03C;
+}
+
+#bks .abk.f-bk .bk-info .stt-r .vl {
+    color: #E94848;
+}
+
+#paging {
+    margin-top: 5px;
+}
+
+#paging > ul {
+    text-align: right;
+}
+
+#paging > ul > li {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#paging .page {
+    line-height: 30px;
+    font-size: 12px;
+}
+
+#paging .ctrls .btn {
+    display: block;
+    height: 30px;
+    width: 30px;
+    background-color: #D6D4D4;
+    cursor: pointer;
+    -webkit-transition: background-color 0.15s;
+    -o-transition: background-color 0.15s;
+    -moz-transition: background-color 0.15s;
+    -ms-transition: background-color 0.15s;
+    transition: background-color 0.15s;
+    position: relative;
+}
+
+#paging .ctrls .btn:hover {
+    background-color: #b5b4b4;
+}
+
+#paging .ctrls .btn.dat,
+#op-tb .paging .ctrls .btn.dat
+{
+    opacity: 0.3;
+    cursor: default;
+}
+
+#paging .ctrls .btn.dat:hover,
+#op-tb .paging .ctrls .btn.dat:hover{
+    background-color: #D6D4D4;
+}
+
+#paging .ctrls > ul {
+    margin: 0 -2.5px;
+}
+
+#paging .ctrls > ul > li {
+    float: left;
+    padding: 0 2.5px;
+}
+
+#paging .ctrls .btn:before {
+    content: ' ';
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-style: solid;
+    border-color: #FFF;
+    border-width: 4px 4px 0 0;
+    -ms-transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 0 4px 0 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -7px;
+    margin-left: -8px;
+}
+
+#paging .ctrls .btn.prv:before {
+    border-width: 0 0 4px 4px;
+    left: auto;
+    right: 50%;
+    margin-right: -8px;
+    border-radius: 0 0 0 4px;
+}

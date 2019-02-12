@@ -1,0 +1,135 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 18, 2018, 6:05:38 PM
+    Author     : nickn
+*/
+
+#account-content .in-txt {
+    background-color: #4DBDC9;
+    color: #fff;
+    padding: 15px;
+}
+
+#account-content .in-txt .med-txt {
+    font-size: 18px;
+}
+
+#account-content .secs > ul > li {
+    margin-top: 30px;
+}
+
+#account-content .secs .aSec .sec-tt {
+    padding: 7px 15px;
+    background-color: #4DBDC9;
+    color: #FFF;
+}
+
+#account-content .secs .aSec .sec-bd {
+    padding-top: 10px;
+    position: relative
+}
+
+#account-content .aSec .ins > ul > li {
+    margin-top: 15px;
+}
+
+#account-content .aSec .ins > ul > li:first-of-type {
+    margin-top: 10px;
+}
+
+#account-content .aSec .ins.editing > ul > li:first-of-type {
+    margin-top: 5px;
+}
+
+#account-content .aSec .ins > ul > li.edit-row {
+    display: none;
+}
+
+#account-content .aSec .ins.editing > ul > li.edit-row {
+    display: block;
+}
+
+#account-content .aSec .ain .lb {
+    float: left;
+    width: 230px;
+    text-align: right;
+}
+
+#account-content .aSec .ain .val {
+    margin-left: 250px;
+    width: 500px;
+}
+
+#account-content .aSec .ain .val .txt {
+    color: #9C9B9C;
+}
+
+#account-content .aSec .ain .val .txt,
+#account-content .aSec .ain .lb {
+    line-height: 21px;
+}
+
+#account-content .aSec .ain .val .val-i {
+    display: none;
+}
+
+#account-content .aSec .ins.editing .ain .lb,
+#account-content .aSec .ins.editing .ain .txt {
+    padding: 7px 0;
+}
+
+#account-content .aSec .ins.editing .ain .val-i {
+    display: block;
+}
+
+#account-content .aSec .ins.editing .ain .val .txt:not(.fixed) {
+    display: none;
+}
+
+#account-content .ain .val .btns > ul {
+    margin: 0 -5px;
+}
+
+#account-content .ain .val .btns > ul > li {
+    display: inline-block;
+    padding: 0 5px;
+}
+
+#account-content .ain .val .btns .yt-btn {
+    width: 150px;
+}
+
+#account-content .ain .val .btns li.edit-btn {
+    display: none;
+}
+
+#account-content .ins.editing .ain .val .btns li:not(.edit-btn) {
+    display: none;
+}
+
+#account-content .ins.editing .ain .val .btns li.edit-btn {
+    display: inline-block;
+}
+
+#account-content .aSec .ins .phone-i li.phone-c {
+    float: left;
+    width: 120px;
+}
+
+#account-content .aSec .ins .phone-i li.phone-n {
+    margin-left: 130px;
+}
+
+.status-input.err .ddl-input:after{
+    display: none
+}
+
+.error-msg {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #E94848;
+}

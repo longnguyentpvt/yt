@@ -1,0 +1,244 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 28, 2018, 12:22:40 PM
+    Author     : nickn
+*/
+
+#account-verification > ul > li {
+    margin-bottom: 25px;
+}
+
+#account-verification > ul > li:last-of-type {
+    margin-bottom: 0;
+}
+
+#account-verification .aSec .s-tt {
+    margin-bottom: 10px;
+    background-color: #4DBDC9;
+    color: #FFF;
+    padding: 5px 10px;
+}
+
+#account-verification .aSec .s-bd {
+    padding: 0px 10px;
+    position: relative
+}
+
+#account-verification .aSec .rows > li {
+    margin-bottom: 15px;
+}
+
+#account-verification .aSec .rows > li:last-of-type {
+    margin-bottom: 10px;
+}
+
+#account-verification .aSec .ins {
+    text-align: justify;
+}
+
+#account-verification .aSec .f-sec {
+    width: 600px;
+    margin: 0 auto;
+}
+
+#account-verification .aSec .f-sec .no-doc {
+    text-align: center;
+}
+
+#account-verification .aSec .f-sec .f-tt {
+    color: #9C9B9C;
+    border-bottom: solid 1px #9C9B9C;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+#account-verification .aSec .aDoc .ctrs {
+    float: right;
+}
+
+#account-verification .aSec .aDoc .na {
+    width: 400px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#account-verification .aSec .doc-s .btn {
+    padding-top: 5px;
+    text-align: center;
+}
+
+#account-verification .aSec .form > ul > li {
+    margin-bottom: 5px;
+}
+
+#account-verification .aSec .sm-btn {
+    width: 150px;
+    margin: 0 auto;
+}
+
+#account-verification .aSec .form .aI .lb {
+    float: left;
+    line-height: 35px;
+    width: 190px;
+}
+
+#account-verification .aSec .form .aI .in {
+    margin-left: 200px;
+}
+
+#account-verification .aSec .form .aI .in .yt-input.readonly {
+    background-color: #D6D4D4;
+}
+
+#account-verification .f-sec .f-tt .add-btn {
+    color: #4DBDC9;
+    float: right;
+    cursor: pointer;
+}
+
+#account-verification .f-sec .f-tt .add-btn .btn {
+    width: 22px;
+    height: 22px;
+    display: inline-block;
+    background-color: #4DBDC9;
+    border-radius: 50%;
+    cursor: pointer;
+    vertical-align: middle;
+    margin-bottom: 2px;
+    margin-right: 5px;
+    position: relative;
+}
+
+#account-verification .f-sec .f-tt .add-btn .btn:before,
+#account-verification .f-sec .f-tt .add-btn .btn:after {
+    content: '';
+    background: #fff;
+    position: absolute;
+    display: block;
+    height: 2px;
+    width: 12px;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    margin-left: -6px;
+}
+
+#account-verification .f-sec .f-tt .add-btn .btn:after {
+    height: 12px;
+    width: 2px;
+    margin-top: -6px;
+    margin-left: -1px;
+}
+
+#upp .popup {
+    width: 400px;
+}
+
+#upp .up-b  {
+    background-size: cover;
+    background-position: center center;
+}
+
+#upp .up-b .b-ct {
+    width: 100%;
+    padding-bottom: 100%;
+    position: relative;
+    border: dashed 2px #9C9B9C;
+}
+
+#upp .up-b .u-btn {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #9C9B9C;
+    cursor: pointer;
+}
+
+#upp .up-b .pdf-file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #9C9B9C;
+}
+
+#upp .up-b .e-btn {
+    position: absolute;
+    width: 70px;
+    top: 10px;
+    right: 10px;
+}
+
+#upp .ctrls > ul {
+    margin: 0 -10px;
+}
+
+#upp .ctrls > ul > li {
+    padding: 0 10px;
+    float: left;
+    width: 50%;
+}
+
+#upp .er-msgs {
+    color: #E94848;
+    margin-top: 5px;
+}
+
+#upp .er-msgs .msg {
+    display: block;
+}
+
+.yt-popup.de-pop .popup {
+    width: 600px;
+}
+
+.yt-popup.de-pop .ques {
+    text-align: center;
+}
+
+.yt-popup.de-pop .ctrls {
+    display: table;
+    margin: 0 auto;
+}
+
+.yt-popup.de-pop .ctrls > ul {
+    margin: 0 -10px;
+}
+
+.yt-popup.de-pop .ctrls > ul > li {
+    float: left;
+    width: 150px;
+    padding: 0 10px;
+}
+
+.status-input.err .ddl-input:after{
+    display: none
+}
+
+.error-msg {
+    margin-top: 2px;
+    font-size: 12px;
+    color: #E94848;
+}
+
+#upp span.link{
+    text-decoration: underline
+}
+
+.err-no-doc{
+    color: #E94848
+}
+
+.ddl-input.readonly:after  {
+    display: none
+}
